@@ -62,20 +62,20 @@ const gulp = require('gulp'),
 gulp.task('default', ['sass', 'es6'], () => {
     browserSync.init({
         server: {
-            baseDir: "./src",
+            baseDir: "./",
             index: "index.html"
         }
     });
 
     gulp.watch(`${dir.src}/scss/*.scss`, ['sass']);
     gulp.watch(`${dir.src}/es6/*.js`, ['es6']);
-    gulp.watch("./src/*.html").on('change', browserSync.reload);
+    gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass', () => {
     gulp
         .src(`${dir.src}/scss/*.scss`)
-        .pipe(sass(opts.sass))
+        .pipe(sass(opts.sass).on('error', sass.logError))
         .pipe(gulp.dest(`${dir.dist}/css`))
         .pipe(browserSync.stream())
 });
