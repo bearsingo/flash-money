@@ -1,0 +1,7 @@
+.b{
+    grid-template-rows: repeat(4, 100px);
+    grid-template-areas: "mapa mapa mapa mapa local1 local1"
+                        "mapa mapa mapa mapa local2 local2"
+                        "mapa mapa mapa mapa local3 local3"
+                        "mapa mapa mapa mapa local4 local4"
+}

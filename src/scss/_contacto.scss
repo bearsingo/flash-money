@@ -16,9 +16,7 @@ h1 {
 .map{
     background: green;
     grid-area: mapa;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
 }
 
 .mapa-google{
@@ -27,20 +25,36 @@ h1 {
     width: 15%;
 }
 
+.a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.item-direccion{
+    display: inline-block;
+    margin: 0;
+}
+
 .dir-1{
-    background: red;
     grid-area: local1;
 }
 
 .dir-2{
-    background: red;
     grid-area: local2;
 }
 .dir-3{
-    background: red;
     grid-area: local3;
 }
 .dir-4{
-    background: red;
     grid-area: local4;
+}
+
+@media screen and (min-width: 1024px)  {
+    .c{
+      grid-template-areas: "mapa mapa mapa mapa mapa mapa mapa mapa mapa local1 local1 local1"
+                        "mapa mapa mapa mapa mapa mapa mapa mapa mapa local2 local2 local2"
+                        "mapa mapa mapa mapa mapa mapa mapa mapa mapa local3 local3 local3"
+                        "mapa mapa mapa mapa mapa mapa mapa mapa mapa local4 local4 local4"
+    }
+    
 }
